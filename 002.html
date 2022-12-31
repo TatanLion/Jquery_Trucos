@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+</head>
+<body>
+    
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        //Función para determinar según sea la página ejecutar las respectivas funciones
+        var route = {
+            _routes : {},
+            add : function(url, action){
+                this._routes[url] = action;
+            },
+            run : function (){
+                $.each(this._routes, function(patron){
+                    if(location.href.match(patron)){
+                        //Puedo ejecutar cualquier código.
+                        this();
+                    }
+                })
+            }
+        }
+
+        route.add('002.html', function(){
+            console.log("Este código solo funciona en la pagina 002.html");
+        });
+
+        route.run();
+    </script>
+</body>
+</html>

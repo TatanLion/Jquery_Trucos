@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    //Obtener los datos climaticos de un lugar indicando la latitud y la longitud y consumiendo una API gratuita
+    var appid = '2052c5fda65ecd0da396f4b2e3d25d98';
+        url = 'https://api.openweathermap.org/data/2.5/weather?lat=4&lon=72&appid='+ appid +'callback=?';
+        
+    // $.get( url, function(r){
+    //   //La temperatura viene en grados kelvin, para eso podemos restar la constante de 273.15°
+    //   console.log(r);
+    // });
+
+    $.getJSON( url, function(r){
+      console.log(r);
+    })
+    
+
+    </script>
+  </body>
+</html>

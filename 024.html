@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        #mensaje{
+            display: block;
+        }
+        html.JS #mensaje{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <div id="mensaje">
+        Este sitio, requiere JS, por favor activalo
+    </div>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+       //De esta forma podemos validar por ejemplo si JavaScript esta habilitado en el navegdor donde corre nuestro proyecto
+       $(document).ready(function(){
+            $('html').addClass('JS');
+       })
+       
+    </script>
+</body>
+</html>

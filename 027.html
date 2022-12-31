@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      .slideshow{
+        width: 400px;
+        height: 200px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <div class="slideshow">
+      <button type="button" id="btnSiguiente">
+        >>> Siguiente
+      </button>
+    </div>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+      //Toda función recibe parametros por defecto, en el tema de los clics se reciben los eventos, en este caso vmaos a suponer que se puedan mandar estos parametros o simularlos para poder cambiar el color del elemento en caso de que no tengamos acceso a esa información.
+      $('#btnSiguiente').on('click', function(){
+        color = color || 'pink';
+        $('.slideshow').css({
+          backgroundColor:'blue'
+        });
+      });
+
+      var boton = $('#btnSiguiente');
+      boton.trigger('click', ['green']);
+
+    </script>
+  </body>
+</html>

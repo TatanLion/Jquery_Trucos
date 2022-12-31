@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Páginas</title>
+    <style>
+      #div-notificaciones{
+        position: fixed;
+        top: 20px;
+        right: 0;
+        width: 100px;
+        height: 100px;
+      }
+      .notificacion{
+        background-color: blue;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo" class="lipsum">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+    
+    <button type="button" name="button">Crear notificación</button>
+  
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"          crossorigin="anonymous"></script>
+    <script>
+
+    //Complemente para Jquery y JS -- Libreria Underscore
+    var arr = [54,67,4,5,6,31,567,12345]
+    var obj = {
+      nombre: 'Jonathan',
+      edad: 26,
+      peso: '90KG'
+    }
+  
+    //Metodos para objetos
+    console.log('Numeros pares: ', _.filter(arr, function(num){return num % 2 == 0}));
+    console.log('Existe el número 13: ', _.contains(arr, 13));
+    console.log('Número máximo es: ', _.max(arr));
+    console.log('Números unicos: ', _.unique(arr));
+
+    console.log('--------------');
+
+    console.log('LLaves del objeto', _.keys(obj));
+    console.log('Valores del objeto', _.values(obj));
+    console.log('LLaves del objeto', _.pick(obj, 'edad', 'peso'));
+
+    
+
+    </script>
+  </body>
+</html>

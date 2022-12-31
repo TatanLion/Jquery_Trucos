@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo animado</title>
+</head>
+<style>
+    .cubo{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: aqua;
+    }
+</style>
+<body>
+    <center>
+        <button id="left" class="fa fa-backward"></button>
+        <button id="right" class="fa fa-forward"></button>
+        <button id="up" class="fa fa-caret-up"></button>
+        <button id="down" class="fa fa-caret-down"></button>
+        <div class="cubo"></div>
+    </center>
+    <script src="/jquery-3.5.0.min.js"></script>
+    <script>
+        $('body').keyup(function(e){
+            if(e.keyCode == 37){
+                $('.cubo').animate({'left' : '-=50px'})
+            }else if(e.keyCode == 39){
+                $('.cubo').animate({'left' : '+=50px'})
+            }else if(e.keyCode == 38){
+                $('.cubo').animate({'top' : '-=50px'})
+            }else if(e.keyCode == 40){
+                $('.cubo').animate({'top' : '+=50px'})
+            }else{
+                alert('Debe presionar las teclas de dirección.')
+            }
+        });
+    </script>
+</body>
+</html>

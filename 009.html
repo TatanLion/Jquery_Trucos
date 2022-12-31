@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <ul id="desayuno">
+        <li class="huevos">No</li>
+        <li class="tostadas">No</li>
+        <li class="jugo">No</li>
+    </ul>
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        var $desayuno = $("#desayuno");
+        //Poder ejecutar una misma función agregando el evento end para que no se vuelva a ejeutar sino que siga linea por linea.
+        $desayuno.find('.huevos').text('Si').end()
+                 .find('.tostadas').text('Si').end()
+                 .find('.jugo').text('Si').end();
+
+    </script>
+</body>
+</html>

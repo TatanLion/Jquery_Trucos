@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <ul id="numeros">
+        <li>Primero</li>
+        <li>Segundo</li>
+        <li>Tercero</li>
+        <li>Cuarto</li>
+        <li>Quinto</li>
+    </ul>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        //Mala practica
+        $("#numeros li").eq(2).remove();
+
+        //Este metodo eq() nos permite seleccionar de un grupo de elementos uno en particular y aplicar dicha funcion o acción dentro de este elemento.
+        var $numeros = $("#numeros li");
+        $numeros.eq(3).remove();
+        
+        $numeros.eq(0).remove().end()
+                .eq(1).remove().end()
+                .eq(2).remove().end();
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    //Consultar archivos .json agilmente
+    $.get('./data/1.json').done(function(r){
+      console.log(r.mensaje);
+    })
+    .fail(function(err){
+      console.log('El archivo no existe');
+    })
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <a class="fetchSize" href="001.html">Archivo 001.html</a>
+    <a class="fetchSize" href="008.html">Archivo 008.html</a>
+    <a class="fetchSize" href="032.html">Archivo 032.html</a>
+
+    <div id="contenedor"></div>
+    <button type="button" id="btn1">Saltar</button>
+    <button type="button" id="btn2">Golpear</button>
+    <button type="button" id="btn3">Click</button>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    // Vamos con una petición ajax a obtener el tamaño de los archivos e imprimirlos en pantalla.
+
+    $('a.fetchSize').each(function () { 
+       var link = this;
+
+       $.ajax({
+        type: "HEAD",
+        url: "link.href",
+        complete: function(xhr){
+          var size = xhr.getResponseHeader('Content-Length');
+          size = humanizar(size)
+          $(link).append('('+size+')');
+        }
+       });
+    });
+
+    function humanizar( size ){
+      var unidades = ['bytes','KB','MB','GB','TB'];
+      var ord = Math.floor( Math.log(size) / Math.log(1024) );
+      ord = Math.min( Math.max(0,ord), unidades.length -1 );
+      var s = Math.round(  (size/Math.pow(1024,ord)) * 100 ) / 100;
+      return s + ' ' + unidades[ord]
+    }
+
+
+    </script>
+  </body>
+</html>

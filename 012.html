@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        //Obtener todos los datos de una URL y tenerlos por separados al hacer un split en esta.
+        let url = 'www.google.com/search?q=platzi&client=opera-gx&hs=u7u&sxsrf=ALiCzsZ0z0PBM_3Ac38y-0pKrGdg29YZvg%3A1666037325695&ei=TbZNY5qBKpmkkPIPlZuzoAE&ved=0ahUKEwja2-vXiOj6AhUZEkQIHZXNDBQQ4dUDCA4&uact=5&oq=platzi&gs_lcp=Cgdnd3Mtd2l6EAMyDgguEIAEELEDEMcBENEDMggIABCABBCxAzIFCAAQgAQyCAgAEIAEELEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOggIABCABBCwAzoJCAAQBxAeELADOgsIABAHEB4QsAMQCjoOCC4QgAQQxwEQrwEQsAM6CggAELEDEIMBEEM6BwgAELEDEEM6BAgAEEM6DQguELEDEMcBENEDEEM6BQgAELEDOgsILhCABBCxAxDUAjoLCAAQgAQQsQMQgwE6CAgAEIAEEMsBOhAILhCABBDHARDRAxAKEMsBOgsILhCABBDHARCvAUoECEEYAUoECEYYAFD1BFiyFWDaFmgEcAB4AIABsQGIAY0GkgEDMC41mAEAoAEByAEKwAEB&sclient=gws-wiz#comentarios';
+
+        var a = $("<a>",{href: url});
+        console.log('Host name:', a.prop('hostname'));
+        console.log('Path:', a.prop('pathname'));
+        console.log('Query:', a.prop('search'));
+        console.log('Protocolo:', a.prop('protocol'));
+        console.log('Hash:', a.prop('hash'));
+
+        console.log(a.prop('search').split('&'));
+
+    </script>
+</body>
+</html>

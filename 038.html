@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <form id="forma">
+      <input type="text" name="cantante" value="Ed Sheeran">
+      <input type="email" name="email" value="ed@sheeran.com">
+      <textarea>I see fire</textarea>
+    </form>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    //Serializar o capturar información de un formulario, con un solo metodo o función para manipularla luego
+
+    var forma = $('#forma');
+
+    console.log(forma.serialize());
+    
+    console.log('--------------------');
+
+    var mascota = {
+      tipo: 'perro',
+      nombre: 'Runo'
+    }
+
+    console.log($.param(mascota))
+
+    console.log('--------------------');
+
+    console.log(forma.serializeArray());
+
+    </script>
+  </body>
+</html>

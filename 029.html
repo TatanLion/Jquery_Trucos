@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <div id="holder">
+      <button type="button" id="boton1">1</button>
+      <button type="button" id="boton2">2</button>
+      <button type="button" id="boton3">3</button>
+      <button type="button" id="boton4">4</button>
+      <button type="button" id="boton5" style="float: right;">Limpiar</button>
+    </div>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+      //El evento .click ya no se deberia usar, ahora el .on nos permitira indicar que tipo de evento vamos a disparar en los objetos.
+      //Luego del click en los on seguido de un punto podemos colocar un nombre temporal para que luego podamos eliminar ese evento o deshabilitarlo con el off a todos los eventos que tengan ese nombre temporal
+
+      var boton1 = $('#boton1');
+      var boton2 = $('#boton2');
+      var boton3 = $('#boton3');
+      var boton4 = $('#boton4');
+      var boton5 = $('#boton5');
+
+      boton1.on('click', function(){
+        console.log('Click');
+      })
+
+      boton2.on('mouseenter mouseleave',function(){
+        console.log('Entro y salio mouse');
+      });
+
+      boton3.on('click', Math.round(Math.random()*20), function(e){
+        console.log('El numero random es: ', e.data)
+      });
+
+      boton4.on('click.temp', function(){
+        console.log('Temp disparado');
+      });
+
+      boton5.on('click', function(){
+        console.clear();
+        $('button').off('.temp');
+        console.log('Eventos de los botones TEMP han sido eliminados');
+      });
+
+    </script>
+  </body>
+</html>

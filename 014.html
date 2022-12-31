@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        //Prevenimos que un no se pueda seleccionar dentro de nuestra página.
+        $("#parrafo").attr("unselectable","on")
+                     .css("user-select","none")
+                     .on("selectstart", false);
+    </script>
+</body>
+</html>

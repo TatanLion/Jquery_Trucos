@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #preloader{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>    
+
+    <div id="preloader">
+      <p>Cargando...</p>
+    </div>
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    //La forma en la que vamos a usar la consola
+
+    var a = 'Buenos', b = 'Dias';
+    console.log(a + ' ' + b);
+
+    console.dir(window);
+
+    console.info('Información');
+    console.warn('Alerta');
+    console.error('Error');
+
+    for(var i = 0; i < 10; i++){
+      console.count('Vamos por');
+    }
+
+    console.group('Function main');
+    console.log('Vamos en camino');
+    console.groupEnd();
+
+    for(var i = 0; i < 100000; i++){
+      console.count('Vamos por');
+    }
+
+
+    </script>
+  </body>
+</html>

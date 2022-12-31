@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+      //Eventos para poder mover un elemento por la pantalla con el mouse o tocuh, capturando las coordenadas al arrastrarlo y colocarlo allí.
+      var ball = $('<div id="ball"></div>').appendTo('body');
+      var startPosition = {};
+      var elementPosition = {};
+
+      ball.on('mousedown touchstart', function (e){
+        e.preventDefault();
+        e = (e.originalEvent.touches) ? e.originalEvent.touches[0] : e;
+        startPosition = {
+          x: e.pageX,
+          y: e.pageY,
+        };
+
+        elementPosition = {
+          x: ball.offset().left,
+          y: ball.offset().top,
+        }
+
+        ball.on('mousemove.rem touchmove.rem', function(e){
+          e = (e.originalEvent.touches) ? e.originalEvent.touches[0] : e;
+          ball.css({
+            top: elementPosition.y + ( e.pageY - startPosition.y ),
+            left: elementPosition.x + ( e.pageX - startPosition.x ),
+          });
+        });
+      })
+
+      ball.on('mouseup touched', function(){
+        ball.off('.rem');
+      });
+
+    </script>
+  </body>
+</html>

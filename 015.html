@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <div id="elem"></div>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+        //Vamos a generar la información e imprimirla dentro del HTML, de dos formas la primera hacer append en cada repetición y al segunda metemos todas las iteraciones dentro de un arreglo y luego este lo metemos al HTML lo cual hará que se genere y cargue mas rapido la información.
+        var inicio = new Date();
+ 
+        var $elem = $("#elem"),
+            arr = [];
+        // for(var i = 0; i <= 1000; i++){
+        //     $elem.append('<li>Elemento'+ i +'</li>');
+        // }
+
+        for(var i = 0; i <= 1000; i++){
+            arr.push('<li>Elemento ' + i + '</li>');
+        }
+        $elem.append(arr.join(''));
+
+
+        var fin = new Date();
+
+        //Resultados
+        console.log("Fin: ", inicio.getTime());
+        console.log("Fin: ", fin.getTime());
+        console.log("Diff: ", fin.getTime() - inicio.getTime());
+    </script>
+</body>
+</html>

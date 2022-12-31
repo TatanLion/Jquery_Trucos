@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Páginas</title>
+    <style>
+      #div-notificaciones{
+        position: fixed;
+        top: 20px;
+        right: 0;
+        width: 100px;
+        height: 100px;
+      }
+      .notificacion{
+        background-color: blue;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo" class="lipsum">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <div id="div-notificaciones">
+      <!-- <div class="notificacion">
+        Jonathan Amaya
+        <a href="">X</a>      
+      </div> -->
+    </div>
+    
+    <button type="button" name="button">Crear notificación</button>
+  
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"          crossorigin="anonymous"></script>
+    <script>
+
+    //Obtener parametros de elementos del DOM
+    var divNotificaciones = $('#div-notificaciones');
+    
+    $('button').on('click', function(){
+
+      var numRandom = Math.random();
+          numRandom = Math.round(numRandom*10);
+
+      var content = "";
+      content = '<div class="notificacion" data-numero="'+numRandom+'">'
+      content += 'Jonathan Amaya ' + numRandom
+      content += '<a href="#">X</a>'
+      content += '</div>'
+
+      divNotificaciones.append(content);
+    });
+    
+    
+    divNotificaciones.on('click', '.notificacion', function(){
+      var numero = $(this).data('numero');
+      console.log(numero);
+    });
+
+    divNotificaciones.on('click', '.notificacion a', function(){
+      $(this).parent().slideUp(500, function(){
+        $(this).remove();
+      });
+    });
+
+    </script>
+  </body>
+</html>

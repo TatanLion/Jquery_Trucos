@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <ul id="links">
+        <li>
+            <a href="001.html">Ir al 001.html</a>
+        </li>
+        <li>
+            <a href="006.html">Ir al 006.html</a>
+        </li>
+        <li>
+            <a href="http://google.com">Ir a Google</a>
+        </li>
+    </ul>
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+        //Identificar que links dentro de nuestro proyecto son externos y asi agregar una imágen a cada uno de ellos. 
+        $("links a").each(function(){
+            if(this.hostname != location.hostname){
+                $(this).append('<img src=""').attr('target', '_blank');
+            }
+        });
+    </script>
+</body>
+</html>

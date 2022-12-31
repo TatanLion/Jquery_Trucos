@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <div id="elem" style="background: blue;"></div>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        
+        //Primera forma
+        var i =0, iteraciones = 1000;
+        var elem = $('#elem');
+
+        console.time('Enlazado DOM');
+        for(i = 0; i < iteraciones; i++){
+            elem.width(Math.round(Math.random()*100));
+            elem.height(Math.round(Math.random()*100));
+        }
+        console.timeEnd('Enlazado DOM');
+        
+        //Forma en la cual podemos desenlazar un elemento del DOM aplicar las acciones que queramos y volver a añadirlo al DOM, esto hará que los tiempos sean ams cortos y el performance mejore mucho. 
+        //Segunda forma
+        console.time('Separado DOM');
+        var parent = elem.parent();
+        elem.detach();
+        for(i = 0; i < iteraciones; i++){
+            elem.width(Math.round(Math.random()*100));
+            elem.height(Math.round(Math.random()*100));
+        }
+        elem.appendTo(parent);
+        console.timeEnd('Separado DOM');
+    </script>
+</body>
+</html>

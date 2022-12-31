@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas</title>
+    <style>
+        .menu{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo ejemplo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.</p>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+        //Ocultar el menu predefinido y generar uno personalizado al momento de dar clic derecho.
+        $(function(){
+            $(document).on('contextmenu',function(e){
+                e.preventDefault();
+                console.log(e.offsetX, e.offsetY);
+
+                $('.menu').remove();
+
+                let div = $('<div>', {
+                    'class':'menu',
+                    'css':{
+                        'top': e.offsetY,
+                        'left': e.offsetX
+                    },
+                    'animate':{
+                        'width':'150',
+                        'height':'300'
+                    }
+                });
+
+                div.appendTo('body');
+            })
+        })
+
+    </script>
+</body>
+</html>

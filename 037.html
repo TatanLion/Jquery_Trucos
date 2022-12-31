@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas</title>
+    <style>
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulo ejemplo</h1>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, at
+      necessitatibus ipsum aspernatur quod aut sequi libero eum iste a magni
+      reprehenderit expedita dolor itaque est consequuntur, sunt ullam! Illum.
+    </p>
+
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+
+    <script src="./jquery-3.5.0.min.js"></script>
+    <script>
+
+    //Cargar información de archivos externos
+
+    var par1 = $('#parrafo1'),
+        par2 = $('#parrafo2');
+
+    par1.load('./data/1.txt');
+    par1.load('./data/load37.html'); //luego del html puedo colocar la clase o el id y traerme ese texto unicamente
+    
+    
+
+
+    </script>
+  </body>
+</html>
